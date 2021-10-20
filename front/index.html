@@ -1,0 +1,25 @@
+<html>
+
+<body>
+<button type="button" id="get">get api</button>
+<br/>
+<textarea cols="50" rows="20" id="text"></textarea>
+</body>
+<script>
+$=(id)=>document.getElementById(id);
+text=txt=>$('text').value=txt;
+$('get').onclick=()=>{
+  text(new Date()+" ... cargando");
+  try{
+    fetch('/api/')
+    .then(response => response.json())
+    .then(data => text(JSON.stringify(data, null, 2)))
+    .catch(e=>text("Error "+e))
+  }catch(e){
+      text("error "+e)
+  }
+
+}
+</script>
+
+</html>
