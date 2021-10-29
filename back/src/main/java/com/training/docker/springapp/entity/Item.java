@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.training.docker.springapp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

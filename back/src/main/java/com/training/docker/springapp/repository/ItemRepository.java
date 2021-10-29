@@ -1,8 +1,8 @@
-package com.example.repository;
+package com.training.docker.springapp.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.entity.Item;
+import com.training.docker.springapp.entity.Item;
 
 public interface ItemRepository extends JpaRepository<Item, Integer>{
 
