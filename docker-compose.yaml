@@ -4,6 +4,9 @@ services:
     image: proxy
     ports:
     - "8000:80"
+    depends_on:
+    - front
+    - back
   front:
     image: front
     ports:
