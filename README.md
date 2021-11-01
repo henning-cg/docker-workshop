@@ -19,3 +19,10 @@ To run the database you can just execute:
 docker run --name postgres -e POSTGRES_PASSWORD=postgres -d postgres:10
 ```
 
+to run in kubernetes
+```
+kubectl run --image postgres:10 postgres --env POSTGRES_PASSWORD=postgres
+
+kubectl expose pod postgres --port 5432 --target-port 5432
+```
+
