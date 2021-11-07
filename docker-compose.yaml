@@ -1,18 +1,18 @@
 version: '2'
 services:
   proxy:
-    image: proxy
+    image: proxy:v1
     ports:
     - "8000:80"
     depends_on:
     - front
     - back
   front:
-    image: front
+    image: front:v1
     ports:
     - "5000:80"
   back:
-    image: back
+    image: back:v1
     ports:
     - "8080:8080"
     depends_on:
