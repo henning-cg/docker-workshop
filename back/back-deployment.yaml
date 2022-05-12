@@ -16,3 +16,16 @@ spec:
         image: back:v1
         ports:
         - containerPort: 80
+        env:
+          - name: SPRING_CLOUD_GCP_SQL_ENABLED
+            value: "false"
+          - name: SPRING_DATASOURCE_USERNAME
+            value: "app"
+          - name: SPRING_DATASOURCE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: cluster-example-app
+          - name: SPRING_DATASOURCE_URL
+            value: 'jdbc:postgresql://${CLUSTER_EXAMPLE_RW_SERVICE_HOST}:5432/app'
+
